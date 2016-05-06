@@ -17,7 +17,7 @@ _.mixin({
 _.mixin({
   mapObjectDeep: function (obj, mapper) {
     return mapper(_.mapValues(obj, function (o) {
-      return _.isPlainObject(o) ? _.mapObjectDeep(o, mapper) : o;
+      return _.isObject(o) ? _.mapObjectDeep(o, mapper) : o;
     }));
   }
 });
